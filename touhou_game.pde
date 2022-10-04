@@ -11,6 +11,7 @@ int MODE=1;
 int level = 1;
 int counter =1;
 int a =0, b = 0;
+String s1 = dataPath("");
 ArrayList<GameObject> engine;
 Ship myShip;
 EnemyBoss1 bosslevel1;
@@ -26,28 +27,28 @@ int bosslife=1500;
 void setup()
 {
   size(600,600);
-  spaceship = loadImage("spaceship.png");
-  reimu = loadImage("reimu.png");
-  enemy = loadImage("enemy.png");
-  upgrade = loadImage("upgrade.png");
+  spaceship = loadImage("itemPics"+"\\"+"spaceship.png");
+  reimu = loadImage("itemPics"+"\\"+"reimu.png");
+  enemy = loadImage("itemPics"+"\\"+"enemy.png");
+  upgrade = loadImage("itemPics"+"\\"+"upgrade.png");
   explosionPics = new PImage[12];
   lazerPics = new PImage[24];
-  BGI = loadImage("BGI.jpg");
-  boss1 = loadImage("boss1.png");
+  BGI = loadImage("itemPics"+"\\"+"BGI.jpg");
+  boss1 = loadImage("itemPics"+"\\"+"boss1.png");
   
   minim = new Minim(this);
-  bgm1 = minim.loadFile("Metal Slug 5 Music- Speeder.mp3");
-  bgmboss1 = minim.loadFile("Metal Slug 5 Music- Fierce Battle.mp3");
+  bgm1 = minim.loadFile("ost"+"\\"+"Metal Slug 5 Music- Speeder.mp3");
+  bgmboss1 = minim.loadFile("ost"+"\\"+"Metal Slug 5 Music- Fierce Battle.mp3");
   
   while(a<=11)
   {
-  explosionPics[a] = loadImage("BlueExplosionPNG_"+a+".png");
+  explosionPics[a] = loadImage("explosionPics"+"\\"+"BlueExplosionPNG_"+a+".png");
   a++;
   }
   
   while(b<=23)
   {
-    lazerPics[b] = loadImage("frame_"+b+"_delay-0.01s.gif");
+    lazerPics[b] = loadImage("explosionPics"+"\\"+"frame_"+b+"_delay-0.01s.gif");
     b++;
   }
   engine = new ArrayList<GameObject>(10000);
